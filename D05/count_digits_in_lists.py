@@ -12,4 +12,13 @@
 # 8  1
 # 9  1
 
-# numbers = [1203, 1256, 312456, 98]
+numbers = [1203, 1256, 312456, 98]
+import numpy as np
+import re
+digits = np.zeros(10)
+for num in numbers:
+    digit_groups = list(re.findall(r'\d', str(num)))
+    for digit in digit_groups:
+        digits[int(digit)]+=1
+# print(digits)
+[print(i, int(d)) for i, d in enumerate(digits)]

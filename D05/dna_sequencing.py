@@ -5,3 +5,4 @@
 # First return the sequences containing only ACTG. The above string can will be changed to ['ACCG', 'C', 'GTTACTGGGC', 'TTGT'].
 # Then sort them by lenght. Expected result: ['GTTACTGGGC', 'ACCG', 'TTGT', 'C']
 
+seq = input()

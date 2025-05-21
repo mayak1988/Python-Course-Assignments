@@ -8,7 +8,7 @@ import re
 
 seq = input()
 # print(seq)
-cleaned = re.sub(r'[^ACGT]', ' ', seq.upper())
+cleaned = seq.upper().replace('X',' ')
 list =cleaned.split(' ')
 cleaned_list = [item for item in list if item]
 sorted_list = sorted(cleaned_list, key=len, reverse=True)

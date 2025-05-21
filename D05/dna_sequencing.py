@@ -4,5 +4,12 @@
 # Given a sequence such as the one above (some nucleotides mixed up with other elements represented by an X)
 # First return the sequences containing only ACTG. The above string can will be changed to ['ACCG', 'C', 'GTTACTGGGC', 'TTGT'].
 # Then sort them by lenght. Expected result: ['GTTACTGGGC', 'ACCG', 'TTGT', 'C']
+import re
 
 seq = input()
+# print(seq)
+cleaned = re.sub(r'[^ACGT]', ' ', seq.upper())
+list =cleaned.split(' ')
+cleaned_list = [item for item in list if item]
+sorted_list = sorted(cleaned_list, key=len, reverse=True)
+print(sorted_list)

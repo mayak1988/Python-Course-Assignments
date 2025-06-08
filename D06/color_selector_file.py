@@ -21,3 +21,5 @@
 
 
 # Extend the previous example by letting the user provide the name of the file on the command line: python color.py examples/files/color.txt
+
+user_select = input('Choose a color./n 1.blue /n 2.green /n 3.yellow ')

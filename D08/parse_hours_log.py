@@ -1,32 +1,33 @@
 from datetime import datetime
 import sys
-# log_string = """
-# 09:20 Introduction
-# 11:00 Exercises
-# 11:15 Break
-# 11:35 Numbers and strings
-# 12:30 Lunch Break
-# 13:30 Exercises
-# 14:10 Solutions
-# 14:30 Break
-# 14:40 Lists
-# 15:40 Exercises
-# 17:00 Solutions
-# 17:30 End
 
-# 09:30 Lists and Tuples
-# 10:30 Break
-# 10:50 Exercises
-# 12:00 Solutions
-# 12:30 Dictionaries
-# 12:45 Lunch Break
-# 14:15 Exercises
-# 16:00 Solutions
-# 16:15 Break
-# 16:30 Functions
-# 17:00 Exercises
-# 17:30 End
-# """
+log_string = """
+09:20 Introduction
+11:00 Exercises
+11:15 Break
+11:35 Numbers and strings
+12:30 Lunch Break
+13:30 Exercises
+14:10 Solutions
+14:30 Break
+14:40 Lists
+15:40 Exercises
+17:00 Solutions
+17:30 End
+
+09:30 Lists and Tuples
+10:30 Break
+10:50 Exercises
+12:00 Solutions
+12:30 Dictionaries
+12:45 Lunch Break
+14:15 Exercises
+16:00 Solutions
+16:15 Break
+16:30 Functions
+17:00 Exercises
+17:30 End
+"""
 def parse_log_file(file_path):
     """
     Reads the log content from a specified file path.
@@ -71,7 +72,7 @@ def process_day_activities(activities, categories_total_time, parsed_log_output)
         
         duration = (end_time - start_time).total_seconds() / 60  # Duration in minutes
         
-        # categories_total_time.setdefault(activity_name.strip(), 0)
+        categories_total_time.setdefault(activity_name.strip(), 0)
         categories_total_time[activity_name.strip()] += duration
         
         parsed_log_output.append(f"{start_time_str}-{end_time_str} {activity_name.strip()}")
@@ -83,10 +84,13 @@ if __name__ == "__main__":
         print("Usage: python your_script_name.py <path_to_log_file>")
         sys.exit(1) 
 
-    categories_total_time = {}
+    from collections import defaultdict
+
+    categories_total_time = defaultdict(int)
     log_file_path = sys.argv[1] 
     log_content = parse_log_file(log_file_path)
     
+    # log_content = log_string
     time_spent, formatted_log = parse_log(log_content)
 
     # Print the formatted log first

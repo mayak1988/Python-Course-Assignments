@@ -3,7 +3,7 @@ import numpy as np
 import re
 import sys
 import os 
-from MyModule import generate_report_file,analyze_numbers_in_file 
+from D09.MyModule import generate_report_file,analyze_numbers_in_file 
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
